@@ -496,6 +496,22 @@ body {
   background-color: #67e8f9 !important;
 }
 
+/* Keep accent buttons readable when their outlined state becomes filled. */
+[class*="hover:text-[#050807]"]:hover {
+  color: #050807 !important;
+}
+
+[class*="hover:bg-lime-"]:active {
+  background-color: #22d3ee !important;
+  color: #050807 !important;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+}
+
 [class*="hover:border-lime-"]:hover {
   border-color: rgb(0 217 255 / 0.55) !important;
 }
@@ -509,7 +525,7 @@ body {
 }
 
 .group:hover [class*="group-hover:text-lime-"] {
-  color: rgb(0 217 255 / 0.14) !important;
+  color: #67e8f9 !important;
 }
 
 @keyframes skillsMarquee {
