@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">ThingSpeak</title>
+  <defs>
+    <linearGradient id="bg" x1="7" y1="5" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F8DCC"/>
+      <stop offset="1" stop-color="#17679D"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="42" height="42" rx="10" fill="url(#bg)"/>
+  <path d="M12 34V15M12 34H37" fill="none" stroke="#D9F3FF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="m14.5 29 6.2-7 5.2 4.2 8.5-10" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20.7" cy="22" r="2.3" fill="#7DE3FF"/>
+  <circle cx="25.9" cy="26.2" r="2.3" fill="#7DE3FF"/>
+  <circle cx="34.4" cy="16.2" r="2.3" fill="#7DE3FF"/>
+  <path d="M29.5 11.5c3.8-2.7 8.5-1.2 10 2.2M31.7 14.2c2.1-1.3 4.4-.6 5.4 1" fill="none" stroke="#BDEEFF" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
