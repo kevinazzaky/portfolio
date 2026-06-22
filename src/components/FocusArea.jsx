@@ -15,6 +15,7 @@ function FocusArea({ lang }) {
   const focusText = translations[lang].focus;
   const [activeFocus, setActiveFocus] = useState(0);
   const [rotation, setRotation] = useState(0);
+  const [showAll, setShowAll] = useState(false);
   const dragRef = useRef(null);
 
   const selectRelativeFocus = (direction) => {
@@ -119,38 +120,40 @@ function FocusArea({ lang }) {
                 </span>
               </div>
 
-              <div className="focus-globe-controls">
-                <button
-                  type="button"
-                  onPointerDown={(event) => event.stopPropagation()}
-                  onClick={() => selectRelativeFocus(-1)}
-                  aria-label={lang === "id" ? "Bidang sebelumnya" : "Previous focus area"}
-                >
-                  &larr;
-                </button>
-                <span>{String(activeFocus + 1).padStart(2, "0")} / 06</span>
-                <button
-                  type="button"
-                  onPointerDown={(event) => event.stopPropagation()}
-                  onClick={() => selectRelativeFocus(1)}
-                  aria-label={lang === "id" ? "Bidang berikutnya" : "Next focus area"}
-                >
-                  &rarr;
-                </button>
-              </div>
             </div>
           </div>
         </ScrollReveal>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {focusText.items.map((item, index) => (
-            <ScrollReveal key={item.title} delay={index * 120} className="h-full">
+        <div className="mt-8 flex items-center justify-between gap-4">
+          <p className="text-sm text-slate-500">
+            {showAll ? focusText.allAreas : focusText.selectedArea}
+          </p>
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            aria-expanded={showAll}
+            className="rounded-full border border-lime-400/30 px-5 py-2.5 text-sm font-semibold text-lime-300 transition hover:bg-lime-400 hover:text-[#050807]"
+          >
+            {showAll ? focusText.showOne : focusText.showAll}
+          </button>
+        </div>
+
+        <div className={`mt-5 ${showAll ? "grid gap-5 md:grid-cols-2 lg:grid-cols-3" : "mx-auto max-w-xl"}`}>
+          {(showAll
+            ? focusText.items.map((item, index) => ({ item, index }))
+            : [{ item: focusText.items[activeFocus], index: activeFocus }]
+          ).map(({ item, index }) => (
+            <ScrollReveal
+              key={`${showAll ? "all" : "single"}-${item.title}`}
+              delay={showAll ? index * 80 : 0}
+              className="h-full"
+            >
               <article
-                className={`focus-card group ${activeFocus === index ? "is-active" : ""}`}
+                className={`focus-card group ${activeFocus === index ? "is-active" : ""} ${!showAll ? "is-single" : ""}`}
               >
                 <div className="focus-card-glow"></div>
 
-                <div className="relative z-10 flex h-full flex-col">
+                <div className="focus-card-content relative z-10 flex h-full flex-col">
                   <div className="flex items-start justify-between gap-4">
                     <div className="focus-card-icon">
                       {focusMeta[index].icon}

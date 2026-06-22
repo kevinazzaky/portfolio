@@ -57,12 +57,10 @@ export const translations = {
 
     about: {
       label: "Tentang Saya",
-      title:
-        "Mengubah kebutuhan menjadi pengalaman digital yang jelas dan terarah.",
+      title: "Belajar, membangun, dan terus berkembang.",
       paragraphs: [
-        "Saya Kevin Azzaky, mahasiswa Teknologi Informasi yang berfokus pada pengembangan web dan software. Saya menyukai proses menyusun antarmuka, logika aplikasi, dan data menjadi produk yang terasa utuh saat digunakan.",
-        "Dalam setiap project, saya mengutamakan struktur yang mudah dipahami, tampilan yang responsif, serta alur penggunaan yang tidak membingungkan. Bagi saya, hasil yang baik bukan hanya terlihat modern, tetapi juga memiliki tujuan yang jelas.",
-        "Portofolio ini merangkum pendekatan saya dalam mengerjakan berbagai kebutuhan digital, mulai dari aplikasi web, sistem backend, pengelolaan database, hingga project lintas platform.",
+        "Saya Kevin Azzaky, mahasiswa Teknologi Informasi yang berfokus pada web development dan software engineering.",
+        "Saya senang memadukan antarmuka, logika aplikasi, dan data menjadi project yang responsif, terstruktur, dan mudah digunakan.",
       ],
       stats: [
         { value: "6+", label: "Project" },
@@ -76,6 +74,10 @@ export const translations = {
       title: "Bidang yang Sedang Saya Kembangkan",
       description:
         "Fokus utama saya saat ini berada pada pengembangan aplikasi berbasis web, mulai dari tampilan, backend, database, hingga alur kerja pengembangan software.",
+      selectedArea: "Bidang yang sedang dipilih",
+      allAreas: "Semua bidang pengembangan",
+      showAll: "Lihat Semua",
+      showOne: "Tampilkan Satu",
       items: [
         {
           title: "Web Development",
@@ -216,6 +218,16 @@ export const translations = {
       email: "Email Saya",
       github: "GitHub",
       cta: "Hubungi Saya",
+      name: "Nama",
+      namePlaceholder: "Nama lengkap Anda",
+      formEmail: "Email",
+      subject: "Subjek",
+      subjectPlaceholder: "Tujuan menghubungi saya",
+      message: "Pesan",
+      messagePlaceholder: "Tulis pesan Anda di sini...",
+      send: "Kirim Pesan",
+      sendNote: "Aplikasi email akan terbuka. Periksa pesan, lalu tekan Kirim.",
+      sender: "Dikirim oleh",
     },
 
     footer: {
@@ -281,12 +293,10 @@ export const translations = {
 
     about: {
       label: "About Me",
-      title:
-        "Turning requirements into clear and purposeful digital experiences.",
+      title: "Learning, building, and continuously growing.",
       paragraphs: [
-        "I am Kevin Azzaky, an Information Technology student focused on web and software development. I enjoy bringing interfaces, application logic, and data together into products that feel complete to use.",
-        "In every project, I prioritize understandable structure, responsive presentation, and straightforward user flows. A strong result should not only look modern, but also serve a clear purpose.",
-        "This portfolio reflects my approach to a range of digital needs, from web applications and backend systems to database management and cross-platform projects.",
+        "I am Kevin Azzaky, an Information Technology student focused on web development and software engineering.",
+        "I enjoy combining interfaces, application logic, and data into responsive, structured, and easy-to-use projects.",
       ],
       stats: [
         { value: "6+", label: "Projects" },
@@ -300,6 +310,10 @@ export const translations = {
       title: "Areas I Am Currently Developing",
       description:
         "My main focus is web-based application development, including interface design, backend logic, database management, and software development workflow.",
+      selectedArea: "Currently selected area",
+      allAreas: "All development areas",
+      showAll: "View All",
+      showOne: "Show One",
       items: [
         {
           title: "Web Development",
@@ -439,6 +453,16 @@ export const translations = {
       email: "My Email",
       github: "GitHub",
       cta: "Contact Me",
+      name: "Name",
+      namePlaceholder: "Your full name",
+      formEmail: "Email",
+      subject: "Subject",
+      subjectPlaceholder: "Why you are contacting me",
+      message: "Message",
+      messagePlaceholder: "Write your message here...",
+      send: "Send Message",
+      sendNote: "Your email app will open. Review the message, then press Send.",
+      sender: "Sent by",
     },
 
     footer: {
