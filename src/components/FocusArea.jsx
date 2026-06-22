@@ -74,7 +74,7 @@ function FocusArea({ lang }) {
             <div className="relative z-10 max-w-3xl">
               <p className="section-label">{focusText.label}</p>
 
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+              <h2 className="mt-5 text-2xl font-black tracking-tight text-white md:text-3xl">
                 {focusText.title}
               </h2>
 

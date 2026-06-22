@@ -7,7 +7,10 @@ export const translations = {
       skills: "Tech Stack",
       projects: "Project",
       contact: "Kontak",
-      download: "Download CV",
+      download: "Download Resume",
+      cv: "Resume",
+      previewCv: "Preview Resume",
+      downloadCv: "Download Resume",
       menu: "Menu",
       close: "Tutup",
       language: "Bahasa",
@@ -71,7 +74,7 @@ export const translations = {
 
     focus: {
       label: "Focus Area",
-      title: "Bidang yang Sedang Saya Kembangkan",
+      title: "Eksplorasi Web & Software.",
       description:
         "Fokus utama saya saat ini berada pada pengembangan aplikasi berbasis web, mulai dari tampilan, backend, database, hingga alur kerja pengembangan software.",
       selectedArea: "Bidang yang sedang dipilih",
@@ -243,7 +246,10 @@ export const translations = {
       skills: "Tech Stack",
       projects: "Projects",
       contact: "Contact",
-      download: "Download CV",
+      download: "Download Resume",
+      cv: "Resume",
+      previewCv: "Preview Resume",
+      downloadCv: "Download Resume",
       menu: "Menu",
       close: "Close",
       language: "Language",
@@ -307,7 +313,7 @@ export const translations = {
 
     focus: {
       label: "Focus Area",
-      title: "Areas I Am Currently Developing",
+      title: "Exploring Web & Software.",
       description:
         "My main focus is web-based application development, including interface design, backend logic, database management, and software development workflow.",
       selectedArea: "Currently selected area",

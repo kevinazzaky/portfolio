@@ -15,6 +15,19 @@ body {
   box-sizing: border-box;
 }
 
+.cv-menu summary {
+  list-style: none;
+}
+
+.cv-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-menu[open] summary > span {
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
 ::selection {
   background: #22d3ee;
   color: #08090c;
