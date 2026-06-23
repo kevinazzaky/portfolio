@@ -84,13 +84,13 @@ function Skills({ lang }) {
 
   return (
     <section id="skills" className="py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal delay={100}>
           <div className="max-w-3xl">
             <p className="section-label">
               {skillsText.label}
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
               {skillsText.title}
             </h2>
             <p className="mt-5 leading-relaxed text-slate-400">

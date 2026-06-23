@@ -5,7 +5,7 @@ function About({ lang }) {
   const aboutText = translations[lang].about;
 
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
           <ScrollReveal delay={100}>
@@ -18,7 +18,7 @@ function About({ lang }) {
             </div>
           </ScrollReveal>
 
-          <div className="border-l border-white/10 pl-6 md:pl-8">
+          <div className="sm:border-l sm:border-white/10 sm:pl-6 md:pl-8">
             {aboutText.paragraphs.map((paragraph, index) => (
               <ScrollReveal key={paragraph} delay={index * 120}>
                 <p className="mb-5 leading-7 text-slate-400">

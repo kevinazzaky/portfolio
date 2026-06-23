@@ -199,11 +199,11 @@ export const translations = {
 
     projects: {
       label: "Portfolio",
-      title: "Project Pilihan",
+      title: "3 Project Unggulan",
       description:
-        "Beberapa project yang pernah saya buat selama proses belajar, mulai dari web development, backend, mobile, sampai eksplorasi IoT.",
+        "Tiga project yang sedang saya prioritaskan dan kembangkan. Project lainnya tetap bisa dilihat melalui GitHub.",
       all: "Semua",
-      githubProfile: "GitHub Profile",
+      githubProfile: "Lihat Semua di GitHub",
       detail: "Detail",
       github: "GitHub",
       demo: "Demo",
@@ -215,11 +215,14 @@ export const translations = {
 
     contact: {
       label: "Kontak",
-      title: "Mari terhubung dan diskusi project.",
+      title: "Hubungi saya lewat WhatsApp atau Instagram.",
       description:
-        "Saya terbuka untuk diskusi project, kolaborasi, maupun kesempatan belajar di bidang web development, software engineering, frontend, backend, dan database.",
+        "Saya terbuka untuk diskusi project, kolaborasi, maupun kesempatan belajar. Kirim pesan langsung lewat WhatsApp atau Instagram.",
       email: "Email Saya",
       github: "GitHub",
+      whatsapp: "Chat WhatsApp",
+      instagram: "Instagram",
+      quickContact: "Kontak cepat",
       cta: "Hubungi Saya",
       name: "Nama",
       namePlaceholder: "Nama lengkap Anda",
@@ -229,12 +232,12 @@ export const translations = {
       message: "Pesan",
       messagePlaceholder: "Tulis pesan Anda di sini...",
       send: "Kirim Pesan",
-      sendNote: "Aplikasi email akan terbuka. Periksa pesan, lalu tekan Kirim.",
+      sendNote: "WhatsApp akan terbuka dengan pesan yang sudah terisi.",
       sender: "Dikirim oleh",
     },
 
     footer: {
-      text: "Dibuat dengan React dan Tailwind CSS.",
+      copyright: "© 2026 Kevin Azzaky. Portfolio pribadi.",
     },
   },
 
@@ -437,11 +440,11 @@ export const translations = {
 
     projects: {
       label: "Portfolio",
-      title: "Selected Projects",
+      title: "3 Featured Projects",
       description:
-        "Several projects I have built during my learning process, from web development, backend, mobile, to IoT exploration.",
+        "Three projects I am currently prioritizing and improving. More projects are available on GitHub.",
       all: "All",
-      githubProfile: "GitHub Profile",
+      githubProfile: "View All on GitHub",
       detail: "Detail",
       github: "GitHub",
       demo: "Demo",
@@ -453,11 +456,14 @@ export const translations = {
 
     contact: {
       label: "Contact",
-      title: "Let’s connect and discuss projects.",
+      title: "Reach me on WhatsApp or Instagram.",
       description:
-        "I am open to project discussions, collaboration, and learning opportunities in web development, software engineering, frontend, backend, and database.",
+        "I am open to project discussions, collaboration, and learning opportunities. Send me a direct message through WhatsApp or Instagram.",
       email: "My Email",
       github: "GitHub",
+      whatsapp: "Chat on WhatsApp",
+      instagram: "Instagram",
+      quickContact: "Quick contact",
       cta: "Contact Me",
       name: "Name",
       namePlaceholder: "Your full name",
@@ -467,12 +473,12 @@ export const translations = {
       message: "Message",
       messagePlaceholder: "Write your message here...",
       send: "Send Message",
-      sendNote: "Your email app will open. Review the message, then press Send.",
+      sendNote: "WhatsApp will open with your message already filled in.",
       sender: "Sent by",
     },
 
     footer: {
-      text: "Built with React and Tailwind CSS.",
+      copyright: "© 2026 Kevin Azzaky. Personal portfolio.",
     },
   },
 };

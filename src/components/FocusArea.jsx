@@ -67,10 +67,10 @@ function FocusArea({ lang }) {
   };
 
   return (
-    <section id="focus" className="px-6 py-24">
+    <section id="focus" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal delay={100}>
-          <div className="focus-showcase glass-panel grid items-center gap-10 overflow-hidden rounded-[2rem] p-7 md:grid-cols-[1.25fr_0.75fr] md:p-10">
+          <div className="focus-showcase glass-panel grid items-center gap-8 overflow-hidden rounded-[2rem] p-5 sm:p-7 md:p-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-10">
             <div className="relative z-10 max-w-3xl">
               <p className="section-label">{focusText.label}</p>
 
@@ -124,7 +124,7 @@ function FocusArea({ lang }) {
           </div>
         </ScrollReveal>
 
-        <div className="mt-8 flex items-center justify-between gap-4">
+        <div className="mt-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-sm text-slate-500">
             {showAll ? focusText.allAreas : focusText.selectedArea}
           </p>

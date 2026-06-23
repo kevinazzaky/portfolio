@@ -19,7 +19,7 @@ function BackToTop() {
   return (
     <a
       href="#home"
-      className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-lime-400/40 bg-[#0B120D] text-lime-300 shadow-xl shadow-lime-500/10 transition hover:bg-lime-400 hover:text-[#050807]"
+      className="fixed bottom-4 right-4 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-lime-400/40 bg-[#0B120D] text-lime-300 shadow-xl shadow-lime-500/10 transition hover:bg-lime-400 hover:text-[#050807] sm:bottom-6 sm:right-6 sm:h-12 sm:w-12"
       aria-label="Back to top"
     >
       ↑

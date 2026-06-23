@@ -49,14 +49,16 @@ function Hero({ lang }) {
   if (!activeProject) return null;
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center px-6 pb-20 pt-32">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-14 md:grid-cols-2">
+    <section id="home" className="relative flex min-h-screen items-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-14">
         <ScrollReveal delay={100}>
           <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300">
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm text-slate-300">
               <span className="h-2 w-2 rounded-full bg-lime-400 shadow-lg shadow-lime-400/50"></span>
-              {getGreeting(currentLang)}, {heroText.intro}{" "}
-              <span className="font-semibold text-lime-300">{heroText.name}</span>
+              <span>
+                {getGreeting(currentLang)}, {heroText.intro}{" "}
+                <span className="font-semibold text-lime-300">{heroText.name}</span>
+              </span>
             </div>
 
             <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
@@ -110,10 +112,10 @@ function Hero({ lang }) {
               </span>
             </div>
 
-            <div className="p-5 sm:p-6">
+            <div className="p-4 sm:p-6">
               <div
                 key={activeProject.slug}
-                className="project-card-enter rounded-[1.5rem] border border-white/10 bg-[#050807] p-6"
+                className="project-card-enter rounded-[1.5rem] border border-white/10 bg-[#050807] p-5 sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-lime-400/20 bg-lime-400/10 text-xl font-black text-lime-300">

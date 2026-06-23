@@ -81,7 +81,8 @@ Hasil build akan tersedia di folder `dist/` dan dapat di-deploy ke layanan hosti
 
 ## Kontak
 
-- Email: [kevinazzaky1@gmail.com](mailto:kevinazzaky1@gmail.com)
+- WhatsApp: [0815-2950-0457](https://wa.me/6281529500457)
+- Instagram: [@kevinazzakyy](https://www.instagram.com/kevinazzakyy/)
 - GitHub: [github.com/kevinazzaky](https://github.com/kevinazzaky)
 
 ## Lisensi

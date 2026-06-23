@@ -86,13 +86,13 @@ function Navbar({ lang, setLang }) {
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#050807]/85 backdrop-blur-xl">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 items-center gap-6 px-6 py-4 md:grid-cols-[auto_1fr_auto]">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 items-center gap-6 px-4 py-4 sm:px-6 lg:grid-cols-[auto_1fr_auto]">
         <a href="#home" className="whitespace-nowrap text-xl font-black tracking-tight">
           <span className="text-white">Kevin</span>
           <span className="text-lime-400">Azzaky</span>
         </a>
 
-        <div className="hidden justify-center md:flex">
+        <div className="hidden justify-center lg:flex">
           <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2">
             {menus.map((menu) => (
               <a
@@ -113,7 +113,7 @@ function Navbar({ lang, setLang }) {
           </div>
         </div>
 
-        <div className="hidden items-center justify-end gap-3 md:flex">
+        <div className="hidden items-center justify-end gap-3 lg:flex">
           <button
             onClick={handleChangeLanguage}
             className="rounded-full border border-white/10 px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-lime-400/40 hover:text-lime-300"
@@ -123,7 +123,7 @@ function Navbar({ lang, setLang }) {
           <CvMenu navText={navText} />
         </div>
 
-        <div className="flex justify-end md:hidden">
+        <div className="flex justify-end lg:hidden">
           <button
             onClick={() => setOpen(!open)}
             className="rounded-xl border border-white/10 px-4 py-2 text-sm text-slate-200"
@@ -134,7 +134,7 @@ function Navbar({ lang, setLang }) {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-[#050807] px-6 py-4 md:hidden">
+        <div className="max-h-[calc(100vh-73px)] overflow-y-auto border-t border-white/10 bg-[#050807] px-4 py-4 sm:px-6 lg:hidden">
           <div className="flex flex-col gap-2">
             {menus.map((menu) => (
               <a

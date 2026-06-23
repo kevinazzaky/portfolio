@@ -1,6 +1,10 @@
 import ScrollReveal from "./ScrollReveal";
 import { translations } from "../data/translations";
 
+const whatsappNumber = "6281529500457";
+const instagramUrl = "https://www.instagram.com/kevinazzakyy/";
+const emailAddress = "kevinazzaky1@gmail.com";
+
 function Contact({ lang }) {
   const contactText = translations[lang].contact;
 
@@ -12,26 +16,28 @@ function Contact({ lang }) {
     const email = formData.get("email").trim();
     const subject = formData.get("subject").trim();
     const message = formData.get("message").trim();
-    const body = `${message}\n\n${contactText.sender}: ${name}\nEmail: ${email}`;
+    const body = `${subject}\n\n${message}\n\n${contactText.sender}: ${name}\nEmail: ${email}`;
 
-    window.location.href = `mailto:kevinazzaky1@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`,
+      "_blank",
+      "noreferrer",
+    );
   };
 
   const fieldClass =
     "mt-2 w-full rounded-xl border border-white/10 bg-[#0a0b0e] px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-lime-400/60";
 
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal delay={100}>
-          <div className="glass-panel contact-panel overflow-hidden rounded-[2rem] p-8 md:p-10">
+          <div className="glass-panel contact-panel overflow-hidden rounded-[2rem] p-5 sm:p-8 md:p-10">
             <div className="relative z-10 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
                 <p className="section-label">{contactText.label}</p>
 
-                <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight md:text-5xl">
+                <h2 className="mt-3 text-2xl font-black leading-tight tracking-tight sm:text-3xl md:text-4xl">
                   {contactText.title}
                 </h2>
 
@@ -41,20 +47,38 @@ function Contact({ lang }) {
 
                 <div className="mt-8 flex flex-col gap-3">
                   <a
-                    href="mailto:kevinazzaky1@gmail.com"
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="rounded-2xl border border-lime-400/40 bg-lime-400 px-5 py-4 text-center font-semibold text-[#050807] transition hover:bg-lime-300"
                   >
-                    {contactText.email} -&gt;
+                    {contactText.whatsapp} -&gt;
                   </a>
 
                   <a
-                    href="https://github.com/kevinazzaky"
+                    href={instagramUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-2xl border border-white/10 px-5 py-4 text-center font-semibold text-slate-300 transition hover:border-lime-400/40 hover:text-lime-300"
                   >
-                    {contactText.github} -&gt;
+                    {contactText.instagram} -&gt;
                   </a>
+
+                  <a
+                    href={`mailto:${emailAddress}`}
+                    className="rounded-2xl border border-white/10 px-5 py-4 text-center font-semibold text-slate-300 transition hover:border-lime-400/40 hover:text-lime-300"
+                  >
+                    {contactText.email} -&gt;
+                  </a>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-relaxed text-slate-400">
+                  <p className="font-semibold text-slate-200">
+                    {contactText.quickContact}
+                  </p>
+                  <p className="mt-2">WhatsApp: 0815-2950-0457</p>
+                  <p>Instagram: @kevinazzakyy</p>
+                  <p>Email: {emailAddress}</p>
                 </div>
               </div>
 

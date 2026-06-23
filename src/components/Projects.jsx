@@ -3,37 +3,25 @@ import ScrollReveal from "./ScrollReveal";
 import { projects } from "../data/projects";
 import { translations } from "../data/translations";
 
-const categories = [
-  "All",
-  ...new Set(projects.map((project) => project.category)),
-];
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
 
 function Projects({ lang }) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
-
   const projectText = translations[lang].projects;
 
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
-
   return (
-    <section id="projects" className="px-6 py-24">
+    <section id="projects" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal delay={100}>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="section-label">
-                {projectText.label}
-              </p>
+              <p className="section-label">{projectText.label}</p>
 
-              <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+              <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">
                 {projectText.title}
               </h2>
 
-              <p className="mt-5 max-w-2xl leading-relaxed text-slate-400">
+              <p className="mt-4 max-w-xl leading-relaxed text-slate-400">
                 {projectText.description}
               </p>
             </div>
@@ -42,81 +30,66 @@ function Projects({ lang }) {
               href="https://github.com/kevinazzaky"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-lime-400/40 px-5 py-3 text-sm font-semibold text-lime-300 transition hover:bg-lime-400 hover:text-[#050807]"
+              className="w-fit rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-400/40 hover:text-slate-100"
             >
-              {projectText.githubProfile} ↗
+              {projectText.githubProfile} -&gt;
             </a>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={200}>
-          <div className="mt-10 flex flex-wrap gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
-                  selectedCategory === category
-                    ? "bg-lime-400 text-[#050807]"
-                    : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-lime-400/40 hover:text-lime-300"
-                }`}
-              >
-                {category === "All" ? projectText.all : category}
-              </button>
-            ))}
-          </div>
-        </ScrollReveal>
+        <div className="mt-8 space-y-5">
+          {featuredProjects.map((project, index) => (
+            <ScrollReveal
+              key={project.slug}
+              delay={index * 120}
+              className="w-full"
+            >
+              <article className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.025] transition hover:-translate-y-1 hover:border-slate-400/35 hover:bg-white/[0.04] md:grid-cols-[13rem_1fr]">
+                <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-[#050807]/60 p-5 md:flex-col md:border-b-0 md:border-r md:p-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-slate-400/20 bg-slate-400/10 text-sm font-black text-slate-200">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project, index) => (
-            <ScrollReveal key={project.slug} delay={index * 120}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#0B120D]/90 transition hover:-translate-y-2 hover:border-lime-400/40 hover:shadow-xl hover:shadow-lime-500/5">
-                <div className="relative border-b border-white/10 bg-[#050807] p-6">
-                  <div className="absolute right-[-40px] top-[-40px] h-28 w-28 rounded-full bg-lime-400/10 blur-2xl transition group-hover:bg-lime-400/20"></div>
-
-                  <div className="relative flex items-center justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-lime-400/20 bg-lime-400/10 text-xl font-black text-lime-300">
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      {project.featured && (
-                        <span className="rounded-full border border-lime-400/30 bg-lime-400/10 px-3 py-1 text-xs font-semibold text-lime-300">
-                          {project.status[lang]}
-                        </span>
-                      )}
-
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold text-slate-400">
-                        {project.category}
-                      </span>
-                    </div>
+                  <div className="flex flex-wrap justify-end gap-2 md:justify-start">
+                    <span className="rounded-full border border-indigo-300/20 bg-indigo-400/10 px-2.5 py-1 text-xs font-semibold text-slate-200">
+                      {project.status[lang]}
+                    </span>
+                    <span className="rounded-full border border-white/10 bg-transparent px-2.5 py-1 text-xs font-semibold text-slate-400">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-xl font-black leading-tight text-white">
-                    {project.title[lang]}
-                  </h3>
+                <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-end">
+                  <div>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+                      {projectText.detail} {String(index + 1).padStart(2, "0")}
+                    </p>
 
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-400">
-                    {project.description[lang]}
-                  </p>
+                    <h3 className="text-xl font-black leading-tight text-white sm:text-2xl">
+                      {project.title[lang]}
+                    </h3>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tools.slice(0, 4).map((tool) => (
-                      <span
-                        key={tool}
-                        className="rounded-full border border-white/10 bg-[#050807] px-3 py-1.5 text-xs font-semibold text-slate-300"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
+                      {project.description[lang]}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.tools.slice(0, 4).map((tool) => (
+                        <span
+                          key={tool}
+                          className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-400"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 lg:max-w-[18rem] lg:justify-end">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-[#050807] transition hover:bg-lime-300"
+                      className="rounded-full bg-gradient-to-r from-slate-600 to-indigo-400 px-5 py-2.5 text-sm font-semibold text-white transition hover:from-slate-500 hover:to-indigo-300"
                     >
                       {projectText.detail}
                     </button>
@@ -125,9 +98,9 @@ function Projects({ lang }) {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-white/10 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-lime-400/40 hover:text-lime-300"
+                      className="rounded-full border border-white/10 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-slate-400/40 hover:text-slate-100"
                     >
-                      {projectText.github} ↗
+                      {projectText.github} -&gt;
                     </a>
 
                     {project.demo && (
@@ -135,9 +108,9 @@ function Projects({ lang }) {
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-full border border-lime-400/40 px-5 py-2.5 text-sm font-semibold text-lime-300 transition hover:bg-lime-400 hover:text-[#050807]"
+                        className="rounded-full border border-white/10 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-slate-400/40 hover:text-slate-100"
                       >
-                        {projectText.demo} ↗
+                        {projectText.demo} -&gt;
                       </a>
                     )}
                   </div>
@@ -149,22 +122,22 @@ function Projects({ lang }) {
       </div>
 
       {selectedProject && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 px-6 backdrop-blur-sm">
-          <div className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] border border-white/10 bg-[#0B120D] p-6 shadow-2xl shadow-lime-500/10">
-            <div className="flex items-start justify-between gap-6 border-b border-white/10 pb-5">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm sm:p-6">
+          <div className="max-h-[calc(100vh-2rem)] w-full max-w-2xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-[#0B120D] p-5 shadow-2xl shadow-indigo-500/10 sm:max-h-[85vh] sm:rounded-[2rem] sm:p-6">
+            <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-5 sm:gap-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-lime-400">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-300">
                   {selectedProject.category}
                 </p>
 
-                <h3 className="mt-3 text-3xl font-black text-white">
+                <h3 className="mt-3 text-2xl font-black text-white sm:text-3xl">
                   {selectedProject.title[lang]}
                 </h3>
               </div>
 
               <button
                 onClick={() => setSelectedProject(null)}
-                className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-lime-400/40 hover:text-lime-300"
+                className="shrink-0 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-slate-400/40 hover:text-slate-100"
               >
                 {projectText.close}
               </button>
@@ -183,7 +156,7 @@ function Projects({ lang }) {
                 {selectedProject.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1.5 text-sm font-semibold text-lime-300"
+                    className="rounded-full border border-slate-400/20 bg-slate-400/10 px-3 py-1.5 text-sm font-semibold text-slate-300"
                   >
                     {tool}
                   </span>
@@ -196,9 +169,9 @@ function Projects({ lang }) {
                 href={selectedProject.github}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-lime-400 px-5 py-3 text-sm font-semibold text-[#050807] transition hover:bg-lime-300"
+                className="rounded-full bg-gradient-to-r from-slate-600 to-indigo-400 px-5 py-3 text-sm font-semibold text-white transition hover:from-slate-500 hover:to-indigo-300"
               >
-                {projectText.openGithub} ↗
+                {projectText.openGithub} -&gt;
               </a>
 
               {selectedProject.demo && (
@@ -206,9 +179,9 @@ function Projects({ lang }) {
                   href={selectedProject.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-lime-400/40 px-5 py-3 text-sm font-semibold text-lime-300 transition hover:bg-lime-400 hover:text-[#050807]"
+                  className="rounded-full border border-slate-400/30 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:bg-slate-400/10 hover:text-slate-100"
                 >
-                  {projectText.openDemo} ↗
+                  {projectText.openDemo} -&gt;
                 </a>
               )}
             </div>
