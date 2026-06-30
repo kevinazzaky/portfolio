@@ -201,7 +201,7 @@ export const translations = {
       label: "Portfolio",
       title: "3 Project Unggulan",
       description:
-        "Tiga project yang sedang saya prioritaskan dan kembangkan. Project lainnya tetap bisa dilihat melalui GitHub.",
+        "Tiga project utama yang sedang saya prioritaskan dan kembangkan. Project lainnya tetap bisa dilihat melalui GitHub.",
       all: "Semua",
       githubProfile: "Lihat Semua di GitHub",
       detail: "Detail",
@@ -442,7 +442,7 @@ export const translations = {
       label: "Portfolio",
       title: "3 Featured Projects",
       description:
-        "Three projects I am currently prioritizing and improving. More projects are available on GitHub.",
+        "Three main projects I am currently prioritizing and improving. More projects are available on GitHub.",
       all: "All",
       githubProfile: "View All on GitHub",
       detail: "Detail",

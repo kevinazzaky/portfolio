@@ -1,6 +1,6 @@
 export const projects = [
   {
-    slug: "kaizen",
+    slug: "kaizen-website",
     title: {
       id: "Kaizen Website",
       en: "Kaizen Website",
@@ -14,6 +14,30 @@ export const projects = [
     detail: {
       id: "Website company profile untuk layanan Kaizen seperti maintenance, preventive maintenance, spare part, dan pengadaan kitchen equipment. Project ini dibuat dengan tampilan responsif, struktur section yang rapi, dan sudah dideploy menggunakan Vercel.",
       en: "A company profile website for Kaizen services such as maintenance, preventive maintenance, spare parts, and kitchen equipment procurement. This project was built with a responsive layout, clean section structure, and deployed using Vercel.",
+    },
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    status: {
+      id: "Unggulan",
+      en: "Featured",
+    },
+    github: "https://github.com/kevinazzaky/kaizen",
+    demo: "https://kaizen-psi-taupe.vercel.app/",
+  },
+  {
+    slug: "kaizen-service-hub",
+    title: {
+      id: "Kaizen Service Hub",
+      en: "Kaizen Service Hub",
+    },
+    category: "Web",
+    featured: true,
+    description: {
+      id: "Website service hub untuk layanan maintenance kitchen equipment.",
+      en: "A service hub website for kitchen equipment maintenance services.",
+    },
+    detail: {
+      id: "Website landing page untuk Kaizen Service Hub yang memperkenalkan layanan maintenance, service, preventive maintenance, spare part, dan pengadaan kitchen equipment. Project ini dibuat menggunakan Next.js, React, TypeScript, dan Tailwind CSS dengan tampilan responsif serta deploy Vercel.",
+      en: "A landing page for Kaizen Service Hub that introduces maintenance, service, preventive maintenance, spare parts, and kitchen equipment procurement services. This project was built using Next.js, React, TypeScript, and Tailwind CSS with a responsive layout and Vercel deployment.",
     },
     tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     status: {
@@ -72,27 +96,27 @@ export const projects = [
     demo: "",
   },
   {
-    slug: "sistem-kasir",
+    slug: "serene-bali-villas",
     title: {
-      id: "Sistem Kasir Payment",
-      en: "Cashier Payment System",
+      id: "Serene Bali Villas",
+      en: "Serene Bali Villas",
     },
     category: "Web",
     featured: true,
     description: {
-      id: "Project sistem kasir/payment dengan pemisahan frontend dan backend.",
-      en: "A cashier/payment system project with separated frontend and backend.",
+      id: "Sistem manajemen resort dan villa berbasis cloud.",
+      en: "A cloud-based resort and villa management system.",
     },
     detail: {
-      id: "Project sistem kasir sederhana dengan struktur frontend dan backend. Project ini dapat dikembangkan untuk fitur produk, transaksi, pembayaran, autentikasi, dan pengelolaan data.",
-      en: "A simple cashier system project with separated frontend and backend structure. This project can be developed further for product management, transactions, payments, authentication, and data management.",
+      id: "Cloud-based resort and villa management system untuk Serene Bali Villas. Sistem ini dirancang untuk mendukung booking online, real-time room availability, autentikasi dan role management, admin dashboard, payment gateway Stripe dan Midtrans, notifikasi Email/WhatsApp, multi-language, multi-currency, serta deployment AWS.",
+      en: "A cloud-based resort and villa management system for Serene Bali Villas. The system is designed to support online booking, real-time room availability, authentication and role management, an admin dashboard, Stripe and Midtrans payment gateways, Email/WhatsApp notifications, multi-language, multi-currency, and AWS deployment.",
     },
-    tools: ["JavaScript", "Frontend", "Backend"],
+    tools: ["Laravel", "React", "PostgreSQL", "AWS", "Tailwind CSS"],
     status: {
       id: "Unggulan",
       en: "Featured",
     },
-    github: "https://github.com/kevinazzaky/project-sistemKasir-Payment",
+    github: "https://github.com/kevinazzaky/serene-bali-villas-cloud-resort-management-system",
     demo: "",
   },
   {
@@ -102,7 +126,7 @@ export const projects = [
       en: "Django CRUD Framework",
     },
     category: "Backend",
-    featured: true,
+    featured: false,
     description: {
       id: "Latihan CRUD sederhana menggunakan Django berbasis Python.",
       en: "A simple CRUD practice project using Django with Python.",
